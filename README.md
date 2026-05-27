@@ -1,5 +1,8 @@
 # zap-mcp
 
+> **Docs:** [Model Context Protocol over ZAP](https://zap-proto.dev/docs) · part of the [ZAP Protocol](https://zap-proto.io)
+
+
 Model Context Protocol over ZAP — mutually authenticated, non-repudiable.
 
 [**zap-proto.io**](https://zap-proto.io) · [Spec](https://github.com/zap-proto/spec) · [Paper](https://github.com/zap-proto/papers/tree/main/agent-communication) · [Discord](https://zap-proto.io/discord)
