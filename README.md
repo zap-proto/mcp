@@ -1,6 +1,6 @@
 # zap-mcp
 
-> **Docs:** [Model Context Protocol over ZAP](https://zap-proto.dev/docs) · part of the [ZAP Protocol](https://zap-proto.io)
+> **Docs:** [Model Context Protocol over ZAP](https://zap-proto.dev/docs/protocols/mcp) · part of the [ZAP Protocol](https://zap-proto.io)
 
 
 Model Context Protocol over ZAP — mutually authenticated, non-repudiable.
