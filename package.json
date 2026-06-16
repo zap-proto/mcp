@@ -68,7 +68,7 @@
   },
   "homepage": "https://zap-proto.dev/docs/protocols/mcp",
   "dependencies": {
-    "@zap-proto/zap": "^0.1.0"
+    "@zap-proto/zap": "^1.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
