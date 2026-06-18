@@ -74,7 +74,7 @@ export class ZapServer {
     this.options = {
       port: options.port ?? DEFAULT_PORT,
       host: options.host ?? DEFAULT_HOST,
-      name: options.name ?? 'hanzo-mcp',
+      name: options.name ?? 'zap-mcp',
       maxConnections: options.maxConnections ?? DEFAULT_MAX_CONNECTIONS,
       binary: options.binary ?? true,
       requestTimeout: options.requestTimeout ?? DEFAULT_REQUEST_TIMEOUT,
