@@ -1,7 +1,7 @@
 # ZAP - Zero-Copy App Proto
 # Whitespace-significant Cap'n Proto schema for high-performance agent communication
 
-using Go = import "/go.capnp"
+using Go = import "/go.zap"
 
 # =============================================================================
 # Core Types
