@@ -1,6 +1,6 @@
 {
   "name": "@zap-proto/mcp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Model Context Protocol over ZAP — mutually authenticated, non-repudiable AI agent ↔ tool communication",
   "type": "module",
   "main": "./dist/index.js",
