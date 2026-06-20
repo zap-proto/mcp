@@ -25,6 +25,8 @@ export default defineConfig({
         // Re-export modules
         'src/index.ts',
         'src/server/index.ts',
+        // Pure type declarations (209 type lines, no runtime) — checked by tsc, not unit tests
+        'src/types.ts',
       ],
       thresholds: {
         lines: 60,
