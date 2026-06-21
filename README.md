@@ -43,7 +43,7 @@ const result = await client.callTool("search", { query: "hello" });
 | Layer | Package | Owns |
 |---|---|---|
 | Application | `@zap-proto/mcp` (this) | MCP message shape — tools, calls, agent ↔ tool semantics |
-| Wire | [`@zap-proto/zap`](https://github.com/zap-proto/ts) | Cap'n-Proto codec + Level-4 RPC primitives |
+| Wire | [`@zap-proto/zap`](https://github.com/zap-proto/js) | ZAP zero-copy wire codec + Level-1 RPC primitives |
 
 By the [composability theorem](https://github.com/zap-proto/papers/tree/main/composability), `@zap-proto/mcp` inherits ZAP's PQ confidentiality and mutual auth from the wire — no MCP-specific PQ analysis required.
 
