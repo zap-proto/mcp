@@ -11,11 +11,43 @@ Model Context Protocol over ZAP — mutually authenticated, non-repudiable.
 
 ## Status
 
-**v0.1 — schema-first.** This repo currently ships:
+This repo ships:
 
-- [`schema/zap_mcp.zap`](schema/zap_mcp.zap) — wire format spec in ZAP schema language
+- [`schema/zap_mcp.zap`](schema/zap_mcp.zap) — wire format, in the ZAP schema language
+- **Go** — `github.com/zap-proto/mcp`, the sibling of [`zap-proto/http`](https://github.com/zap-proto/http): same seams, same relationship to the ZAP core
 
-Reference implementations (Go, Rust, TS) land in v0.2 once `zap-proto/spec` provides cross-language codegen for the schema.
+Rust and TS land once `zap-proto/spec` provides cross-language codegen for the schema.
+
+```go
+// server — no HTTP listener anywhere in the path
+srv := &zapmcp.Server{Network: "unix", Addr: "/run/zip/tools.sock", Handler: h}
+srv.ListenAndServe()
+
+// handler
+func h(ctx context.Context, f *zapmcp.Frame) *zapmcp.Frame {
+        if f.Method != "tools/call" {
+                return f.Fail(zapmcp.CodeMethod, "method not found: "+f.Method)
+        }
+        return f.Answer(result)
+}
+
+// client
+c := zapmcp.Dial("unix", "/run/zip/tools.sock")
+out, err := c.Call(ctx, "tools/call", args)
+```
+
+### One value, two projections
+
+MCP is JSON-RPC 2.0; ZAP is binary. Rather than two message types kept in step
+by hand there is one — `Frame` — and two renderings of it:
+
+| | |
+|---|---|
+| `zapmcp.Marshal(f)` | the ZAP wire (`schema/zap_mcp.zap`) |
+| `json.Marshal(f)` | the JSON-RPC 2.0 message |
+
+A server answers frames and never learns which door a frame came in, which is
+what lets the same handler serve ZAP natively and HTTP as an adapter over it.
 
 ## Why
 
